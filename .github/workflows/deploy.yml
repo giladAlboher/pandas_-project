@@ -37,3 +37,4 @@ jobs:
           files: '.'
           name: giladAlboher
           email: gilad1299@gmail.com
+          push-args: '--set-upstream origin main'
