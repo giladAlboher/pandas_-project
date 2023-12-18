@@ -27,7 +27,7 @@ jobs:
       - name: Run Python script
         run: python ./project.py   
 
-      name: push to github
+      - name: push to github
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GH_TOKEN }}
@@ -36,5 +36,4 @@ jobs:
           force-add: 'true'
           files: '.'
           name: giladAlboher
-          email: my.github@email.com 
-    
+          email: my.github@email.com
