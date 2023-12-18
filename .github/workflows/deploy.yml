@@ -26,12 +26,13 @@ jobs:
 
       - name: Run Python script
         run: python ./project.py   
-      - name: Push to GitHub
-        uses: ad-m/github-push-action@master
+
+      name: push to github
+        uses: github-actions-x/commit@v2.9
         with:
-          github_token: ${{ secrets.WORKFLOW_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           push-branch: 'main'
-          commit-message: 'Weekly Python Job'
+          commit-message: 'publish'
           force-add: 'true'
           files: '.'
           name: giladAlboher
