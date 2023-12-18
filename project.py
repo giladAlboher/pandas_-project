@@ -20,7 +20,7 @@ prices = [price[1] for price in data['prices']] # Extract the price from each ti
 market_caps = [cap[1] for cap in data['market_caps']] # Extract the market cap from each timestamp
 total_volumes = [volume[1] for volume in data['total_volumes']] # Extract the total volume from each timestamp
 
-# Step 4: Create a Pandas DataFrame
+# Step 4: Create a Pandas DataFrame.
 # Ensure all arrays have the same length
 min_length = min(len(timestamps), len(prices), len(market_caps), len(total_volumes)) # Get the minimum length
 timestamps = timestamps[:min_length]
