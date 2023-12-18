@@ -1,28 +1,35 @@
 name: Daily Python Job
 
 on:
-  push:
-  schedule:
-    - cron: "0 0 * * *"
+    push:
+    schedule:
+        - cron: "0 0 * * *"
 
 jobs:
-  run_python_job:
-    runs-on: ubuntu-latest
+    run_python_job:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+        steps:
+            - name: Checkout code
+                uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
+            - name: Set up Python
+                uses: actions/setup-python@v2
+                with:
+                    python-version: 3.x
 
-      - name: Install dependencies
-        run: |
-          python -m ensurepip --upgrade
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+            - name: Install dependencies
+                run: |
+                    python -m ensurepip --upgrade
+                    python -m pip install --upgrade pip
+                    pip install -r requirements.txt
 
-      - name: Run Python script
-        run: python ./project.py
+            - name: Run Python script
+                run: python ./project.py
+
+            - name: Push to GitHub
+                uses: ad-m/github-push-action@master
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+
+        
