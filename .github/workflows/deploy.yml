@@ -26,6 +26,12 @@ jobs:
 
       - name: Run Python script
         run: python ./project.py
+      - name: add and Commit files
+        run: |
+            git config --local user.email "
+            git config --local user.name "
+            git add .
+            git commit -m "Daily Python Job"      
       - name: Push to GitHub
         uses: ad-m/github-push-action@master
         with:
