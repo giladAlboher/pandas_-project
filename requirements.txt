@@ -1,2 +1,10 @@
-import subprocess
-pip freeze > requirements.txt
+certifi
+chardet
+idna
+numpy
+pandas
+python-dateutil
+pytz
+requests
+six
+urllib3
