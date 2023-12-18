@@ -36,5 +36,10 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
-
-        
+          push-branch: 'main'
+          commit-message: 'Weekly Python Job'
+          force-add: 'true'
+          files: '.'
+          name: giladAlboher
+          email: my.github@email.com 
+    
