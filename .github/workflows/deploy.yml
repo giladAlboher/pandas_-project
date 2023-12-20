@@ -25,7 +25,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python script
-        run: python ./project.py   
+        run: |
+          python ./project.py
+          mkdir data
+          mv bitcoin_prices_week.csv data/
+          mv weekly_statistics.csv data/
 
       - name: push to github
         uses: github-actions-x/commit@v2.9
@@ -33,8 +37,6 @@ jobs:
           github-token: ${{ secrets.GH_TOKEN }}
           push-branch: 'main'
           commit-message: 'publish'
-          files: 'bitcoin_prices_week.csv weekly_statistics.csv'
+          files: 'data/bitcoin_prices_week.csv data/weekly_statistics.csv'
           name: giladAlboher
           email: gilad1299@gmail.com
-          
-
