@@ -33,7 +33,6 @@ jobs:
           github-token: ${{ secrets.GH_TOKEN }}
           push-branch: 'main'
           commit-message: 'publish'
-          force-add: 'true'
           files: 'bitcoin_prices_week.csv weekly_statistics.csv'
           name: giladAlboher
           email: gilad1299@gmail.com
