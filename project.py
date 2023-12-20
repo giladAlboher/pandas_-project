@@ -40,7 +40,7 @@ bitcoin_prices_week = pd.DataFrame({
 bitcoin_prices_week['Timestamp'] = pd.to_datetime(bitcoin_prices_week['Timestamp'], unit='s')
 bitcoin_prices_week.set_index('Timestamp', inplace=True)
 
-# Step 5: Save the DataFrame to a CSV file.
+# Step 5: Save the DataFrame to a CSV file
 bitcoin_prices_week.to_csv('bitcoin_prices_week.csv', index=False)
 print(bitcoin_prices_week.head())
 print('-------------------')
