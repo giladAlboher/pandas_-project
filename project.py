@@ -42,7 +42,8 @@ bitcoin_prices_week.set_index('Timestamp', inplace=True)
 
 # Step 5: Save the DataFrame to a CSV file
 bitcoin_prices_week.to_csv('bitcoin_prices_week.csv', index=False)
-
+print(bitcoin_prices_week.head())
+print('-------------------')
 print('CSV file created successfully.')
 
 # Step 6: Compute weekly statistics
@@ -50,5 +51,6 @@ weekly_statistics = bitcoin_prices_week.resample('w').agg({'Price (USD)': ['min'
 
 # Step 7: Save the DataFrame to a CSV file
 weekly_statistics.to_csv('weekly_statistics.csv')
+print(weekly_statistics)
 
 print('CSV file created successfully.')
