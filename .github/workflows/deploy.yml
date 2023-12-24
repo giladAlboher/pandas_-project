@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        
+      - name: delete data folder
+        run: |
+          rm -rf data
 
       - name: Set up Python
         uses: actions/setup-python@v2
