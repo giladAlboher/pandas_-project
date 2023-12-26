@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from datetime import datetime
+import json
 
 # Step 1: Specify the CoinGecko API endpoint for historical prices
 url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart'
@@ -13,6 +14,11 @@ params = {
 }
 response = requests.get(url, params=params) # Make an HTTP GET request
 data = response.json() # Convert the response to JSON format
+#export to json file in order to see the structure of the data
+with open('data.json', 'w') as f:
+    json.dump(data, f, indent=4)
+    
+
 
 # Step 3: Extract relevant information from the API response
 timestamps = [timestamp[0] // 1000 for timestamp in data['prices']]  # Convert milliseconds to seconds
